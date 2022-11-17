@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { TopbarComponent } from './Components/topbar/topbar.component';
 import { IndexComponent } from './Components/index/index.component';
+import { ClienteComponent } from './Components/cliente/cliente.component';
 
 
 
@@ -20,6 +21,7 @@ import { IndexComponent } from './Components/index/index.component';
     NavbarComponent,
     TopbarComponent,
     IndexComponent,
+    ClienteComponent,
     
 
   ],
