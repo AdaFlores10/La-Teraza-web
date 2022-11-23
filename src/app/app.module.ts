@@ -10,7 +10,8 @@ const routes:Routes =[
   {path:'login',component:LoginComponent},
   {path:'validation',component:ValidacionComponent},
   {path:'menuadmin',component:MenuAdminComponent,canActivate:[CanActivateGuard]},
-  {path:'cliente',component:ClienteComponent}
+  {path:'cliente',component:ClienteComponent},
+  {path:'carrito-compras',component:CarritoComprasComponent}
 ]
 
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { ValidacionComponent } from './Components/validacion/validacion.component';
 import { MenuAdminComponent } from './Components/menu-admin/menu-admin.component';
 import { CanActivateGuard } from './Service/can-activate.guard';
+import { CarritoComprasComponent } from './Components/carrito-compras/carrito-compras.component';
 
 
 
@@ -36,6 +38,7 @@ import { CanActivateGuard } from './Service/can-activate.guard';
     LoginComponent,
     ValidacionComponent,
     MenuAdminComponent,
+    CarritoComprasComponent,
 
     
 

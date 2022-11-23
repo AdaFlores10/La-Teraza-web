@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras</title>
+
+    <!-- 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <style>
+        .titulo {
+            background-color: rgb(255 255 255 / 0%);
+            color: white
+        }
+
+        .listado {
+            color: white;
+            overflow-y: scroll;
+            max-width: 90%;
+        }
+
+        .boleta {
+            background: rgb(25 26 32 / 90%);
+            color: white;
+        }
+
+        .fila-1 {
+            background-color: darkgray;
+            color: white;
+
+        }
+
+        .fila-0 {
+            background-color: gainsboro;
+        }
+
+        .cabecera-tabla {
+            background: rgb(25 26 32 / 90%);
+            color: white;
+        }
+
+        body {
+            height: 100%;
+
+            background-image: url(https://img.freepik.com/fotos-premium/resumen-textura-piedra-fondo-pared-ladrillo-blanco-gris-fachada-arquitectura_156843-425.jpg?w=2000);
+        }
+
+        .headers {
+            position: unset !important;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        .the {
+            border: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <div class="row titulo">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <h1><b>
+                    Carrito de Compras
+                </b> </h1>
+            </div>
+            <div class="col-4"></div>
+
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-9">
+                <div class="row listado">
+
+                    <table class="table text-center" style="margin: 0px;">
+                        <thead class="cabecera-tabla">
+                            <th class="the">Producto</th>
+                            <th class="the">Cantidad</th>
+                            <th class="the">Subtotal</th>
+                        </thead>
+                        <tbody>
+                            <tr class="fila-0 text-center">
+                                <td>Coca Cola</td>
+                                <td>2</td>
+                                <td>10.00</td>
+                            </tr>
+                            <tr class="fila-1 text-center">
+                                <td>Sprite</td>
+                                <td>2</td>
+                                <td>10.00</td>
+                            </tr>
+                            <tr class="fila-0 text-center">
+                                <td>Fanta</td>
+                                <td>2</td>
+                                <td>10.00</td>
+                            </tr>
+                            <tr class="fila-1 text-center">
+                                <td>Sprite</td>
+                                <td>2</td>
+                                <td>10.00</td>
+                            </tr>
+                            <tr class="fila-0 text-center">
+                                <td>Fanta</td>
+                                <td>2</td>
+                                <td>10.00</td>
+                            </tr>
+                            <tr class="fila-1 text-center">
+                                <td>Sprite</td>
+                                <td>2</td>
+                                <td>10.00</td>
+                            </tr>
+                            <tr class="fila-0 text-center">
+                                <td>Fanta</td>
+                                <td>2</td>
+                                <td>10.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+            <div class="col-3 boleta">
+                <div class="row">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <h4><b>Boleta</b></h4>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
