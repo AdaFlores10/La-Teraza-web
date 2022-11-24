@@ -24,6 +24,7 @@ import { ValidacionComponent } from './Components/validacion/validacion.componen
 import { MenuAdminComponent } from './Components/menu-admin/menu-admin.component';
 import { CanActivateGuard } from './Service/can-activate.guard';
 import { CarritoComprasComponent } from './Components/carrito-compras/carrito-compras.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 
 
@@ -39,6 +40,7 @@ import { CarritoComprasComponent } from './Components/carrito-compras/carrito-co
     ValidacionComponent,
     MenuAdminComponent,
     CarritoComprasComponent,
+    FooterComponent,
 
     
 
