@@ -10,6 +10,7 @@ import { CarritoComprasService } from 'src/app/Service/carrito-compras.service';
 })
 export class CarritoComprasComponent implements OnInit {
 
+  clase=0
   detalleVentas:DetalleVenta[]
   constructor(private detalleService:CarritoComprasService) {
 
@@ -19,11 +20,24 @@ export class CarritoComprasComponent implements OnInit {
     this.detalleService.listarCabeceras()
     .subscribe(data=>{
         this.detalleVentas=data;
-        // console.log("Detalle")
-        // console.log(data)
-        console.log("Detalle")
         console.log(this.detalleVentas)
       }
     )
   }
+
+  editarClase(){
+    if (this.clase==0){
+      this.clase=1
+    }else{
+      this.clase=0
+    }
+    console.log("salida")
+    console.log(this.clase)
+  }
+
+  pintar(item:DetalleVenta){
+    console.log(item)
+  }
+
+
 }
