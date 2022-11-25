@@ -86,11 +86,28 @@
                     <table class="table text-center" style="margin: 0px;">
                         <thead class="cabecera-tabla">
                             <th class="the">Producto</th>
-                            <th class="the">Cantidad</th>
-                            <th class="the">Subtotal</th>
+                            <!-- <th class="the">Cantidad</th>
+                            <th class="the">Subtotal</th> -->
                         </thead>
                         <tbody>
-                            <tr class="fila-0 text-center">
+                            <tr  class="fila-{{clase}}"  *ngFor="let item of detalleVentas">
+                                {{editarClase()}}
+                                
+                                <td>{{item.cantidad}}</td>
+                            </tr>
+                            <tr  class="fila-{{clase}}"  *ngFor="let item of detalleVentas">
+                                {{editarClase()}}
+                                
+                                <td>{{item.cantidad}}</td>
+                            </tr>
+                            <tr  class="fila-{{clase}}"  *ngFor="let item of detalleVentas">
+                                {{editarClase()}}
+                                
+                                <td>{{item.cantidad}}</td>
+                            </tr>
+
+
+                            <!-- <tr class="fila-0 text-center">
                                 <td>Coca Cola</td>
                                 <td>2</td>
                                 <td>10.00</td>
@@ -124,7 +141,7 @@
                                 <td>Fanta</td>
                                 <td>2</td>
                                 <td>10.00</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
 

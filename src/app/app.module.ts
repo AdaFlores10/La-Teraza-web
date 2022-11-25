@@ -27,8 +27,12 @@ import { ValidacionComponent } from './Components/validacion/validacion.componen
 import { MenuAdminComponent } from './Components/menu-admin/menu-admin.component';
 import { CanActivateGuard } from './Service/can-activate.guard';
 import { CarritoComprasComponent } from './Components/carrito-compras/carrito-compras.component';
+<<<<<<< HEAD
 import { HamburguesaComponent } from './Components/hamburguesa/hamburguesa.component';
 import { DetalleproComponent } from './Components/detallepro/detallepro.component';
+=======
+import { FooterComponent } from './Components/footer/footer.component';
+>>>>>>> 299d537055e7a797493b50f45def665545b88752
 
 
 
@@ -44,8 +48,12 @@ import { DetalleproComponent } from './Components/detallepro/detallepro.componen
     ValidacionComponent,
     MenuAdminComponent,
     CarritoComprasComponent,
+<<<<<<< HEAD
     HamburguesaComponent,
     DetalleproComponent,
+=======
+    FooterComponent,
+>>>>>>> 299d537055e7a797493b50f45def665545b88752
 
     
 

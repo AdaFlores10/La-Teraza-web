@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CarritoComprasService {
 
-  private url:string="http://localhost:8080/detalle/detalles";
+  private url:string="http://localhost:8080/detalle/detalleCarrito/1";
 
   constructor(private http:HttpClient) { }
 
