@@ -11,7 +11,10 @@ const routes:Routes =[
   {path:'validation',component:ValidacionComponent},
   {path:'menuadmin',component:MenuAdminComponent,canActivate:[CanActivateGuard]},
   {path:'cliente',component:ClienteComponent},
-  {path:'carrito-compras',component:CarritoComprasComponent}
+  {path:'carrito-compras',component:CarritoComprasComponent},
+  {path:'hamburguesas',component:HamburguesaComponent},
+  {path:'**',redirectTo:'index',pathMatch:'full'}
+
 ]
 
 import { AppComponent } from './app.component';
@@ -24,6 +27,8 @@ import { ValidacionComponent } from './Components/validacion/validacion.componen
 import { MenuAdminComponent } from './Components/menu-admin/menu-admin.component';
 import { CanActivateGuard } from './Service/can-activate.guard';
 import { CarritoComprasComponent } from './Components/carrito-compras/carrito-compras.component';
+import { HamburguesaComponent } from './Components/hamburguesa/hamburguesa.component';
+import { DetalleproComponent } from './Components/detallepro/detallepro.component';
 
 
 
@@ -39,6 +44,8 @@ import { CarritoComprasComponent } from './Components/carrito-compras/carrito-co
     ValidacionComponent,
     MenuAdminComponent,
     CarritoComprasComponent,
+    HamburguesaComponent,
+    DetalleproComponent,
 
     
 
@@ -46,6 +53,7 @@ import { CarritoComprasComponent } from './Components/carrito-compras/carrito-co
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    
     FormsModule,
     HttpClientModule,
   ],
