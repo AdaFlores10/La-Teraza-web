@@ -29,7 +29,7 @@ export class ValidacionComponent implements OnInit {
           console.log("entro aqui")
           this.loginService.loginUser("Accedio")
           localStorage.setItem("user",this.username.toString());
-          window.location.href="menuadmin";
+          window.location.href="cliente";
         }else if(this.user.rol.rol=="Mesero"){
   
         }else{

@@ -5,7 +5,7 @@ export class Usuario{
     public nombre!: string  ;
     public apellido!: string ;
     public usuario!: string  ;
-    public contraseña!: string ;
+    public contrasena!: string ;
     public sexo!: string ;
     public direccion!: string ;
     public telefono!:string  ;

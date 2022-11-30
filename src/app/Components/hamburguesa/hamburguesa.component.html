@@ -2,7 +2,7 @@
     <div class="container g-py-30">
       <h2 class="cpnazo__sub-title">¡Encuentra lo que deseas comer hoy!</h2>
       <div class="cpnazo__layaut-grid">
-        <a href="#" class="cpnazo__layaut-grid__item" *ngFor=" let producto of productos">
+        <a href="#" (click)="ObtenerInfo(producto)" class="cpnazo__layaut-grid__item" *ngFor=" let producto of productos">
           <div class="image">
             <img
               class="cpnazo__img"
@@ -13,7 +13,8 @@
           <div class="info">
             <h3 class="title2">{{producto.producto}}</h3>
             <p class="excert">
-              El gran sabor logrado por nuestra receta secreta
+              El gran sabor logrado por nuestra receta secreta<br>
+              <span class="title3">S/{{producto.precio}}.00</span>
             </p>
             <div class="cpnazo__btn">Ver</div>
           </div>

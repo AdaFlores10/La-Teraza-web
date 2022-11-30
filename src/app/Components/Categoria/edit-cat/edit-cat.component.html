@@ -1,0 +1,50 @@
+<style>
+    .bg{
+    background-image:url(../../../assets/images/categoria.png);
+    background-position: center center;
+    background-size: cover;
+    
+}
+</style>
+
+<div class="container w-75 bg-white mt-5 rounded shadow" >
+    <div class="row align-items-stretch" >
+        
+        <div class="col p-5 rounded-end">
+            
+            
+            <h2 class="fw-bold text-center py-6">Editar Categoria</h2>
+            <br>
+           
+
+            <form action="#">
+                
+                <div class="mb-4">
+                    <label for="" class="form-label fw-bolder">Categoria</label><br>
+                    <input type="text" class="form-control" name="categoria" id="categoria" [(ngModel)]="categoria.categoria">
+                </div>
+                <div class="mb-4">
+                    <label for="" class="form-label fw-bolder">Estado</label><br>
+                    <select name="estado"  [(ngModel)]="categoria.estado" class="form-control ps-2" aria-label="Default select example">
+                        <option [ngValue]="undefined" selected>--Seleccione--</option>
+                        <option [ngValue]="1">Activo</option>
+                        <option [ngValue]="0">Inactivo</option>
+                    </select>
+                </div>
+            
+                <div class="d-grid  ">
+                    <button (click)="ActualizarCategoria(categoria)" type="submit" class="btn btn-primary fw-bold text-light">Registrar</button>
+                </div>
+                
+                
+            </form>
+            
+            
+            
+        </div>
+        <div  class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded" >
+
+        </div>
+        
+    </div>
+</div>
