@@ -61,6 +61,24 @@
         .the {
             border: 0px;
         }
+        tr:nth-child(even) /* even = par || odd = impar */
+        {
+            background-color: white;
+        }
+
+        tr:nth-child(odd){
+            background-color: gainsboro;
+        }
+        td{
+            padding: 25px 0px 0px 0px;
+        }
+        p{
+            text-align: center; width: 100%;
+            color: #cdcdcd;
+
+        }
+
+
     </style>
 
 </head>
@@ -69,13 +87,11 @@
     <div class="container">
         <br>
         <div class="row titulo">
-            <div class="col-4"></div>
-            <div class="col-4">
+            <div class="col-md-12 text-center">
                 <h1><b>
                     Carrito de Compras
                 </b> </h1>
             </div>
-            <div class="col-4"></div>
 
         </div>
         <br><br>
@@ -85,63 +101,32 @@
 
                     <table class="table text-center" style="margin: 0px;">
                         <thead class="cabecera-tabla">
+                            <th class="the"></th>
                             <th class="the">Producto</th>
-                            <!-- <th class="the">Cantidad</th>
-                            <th class="the">Subtotal</th> -->
+                            <th class="the">Precio</th>
+                            <th class="the">Cantidad</th>
+                            <th class="the">Subtotal</th>
+                            <th colspan="2" class="the">Modificar</th>
+
                         </thead>
                         <tbody>
-                            <tr  class="fila-{{clase}}"  *ngFor="let item of detalleVentas">
-                                {{editarClase()}}
-                                
-                                <td>{{item.cantidad}}</td>
-                            </tr>
-                            <tr  class="fila-{{clase}}"  *ngFor="let item of detalleVentas">
-                                {{editarClase()}}
-                                
-                                <td>{{item.cantidad}}</td>
-                            </tr>
-                            <tr  class="fila-{{clase}}"  *ngFor="let item of detalleVentas">
-                                {{editarClase()}}
-                                
-                                <td>{{item.cantidad}}</td>
-                            </tr>
+                            <tr  *ngFor="let item of detalleVentas">
+                                <td style="padding: 0px 0px 0px 0px !important;"><img style="max-height: 70px; max-width: 70px;" src="https://www.pngall.com/wp-content/uploads/2016/04/Coca-Cola-PNG-Clipart.png" alt=""></td>
+                                <td>{{item.producto.producto}}</td>
+                                <td>{{item.producto.precio}}</td>
+                                <td *ngIf="conf==true" id="cantidad">{{item.cantidad}}</td>
+                                <td *ngIf="conf==false"><input  [(ngModel)]="item.cantidad" id="cant_edit" class="form-control" type="number" > </td>
+                                <td>{{item.producto.precio*item.cantidad}}</td>
 
+                                <td colspan="0.5">
+                                    <button  (click)="procesar(item)" class="btn btn-success">{{valor}}</button>
+                                </td>
 
-                            <!-- <tr class="fila-0 text-center">
-                                <td>Coca Cola</td>
-                                <td>2</td>
-                                <td>10.00</td>
+                                <td>
+                                    <button (click)="eliminar(item.idDetalleVenta)" class="btn btn-danger">BORRAR</button>
+                                </td>
+                                
                             </tr>
-                            <tr class="fila-1 text-center">
-                                <td>Sprite</td>
-                                <td>2</td>
-                                <td>10.00</td>
-                            </tr>
-                            <tr class="fila-0 text-center">
-                                <td>Fanta</td>
-                                <td>2</td>
-                                <td>10.00</td>
-                            </tr>
-                            <tr class="fila-1 text-center">
-                                <td>Sprite</td>
-                                <td>2</td>
-                                <td>10.00</td>
-                            </tr>
-                            <tr class="fila-0 text-center">
-                                <td>Fanta</td>
-                                <td>2</td>
-                                <td>10.00</td>
-                            </tr>
-                            <tr class="fila-1 text-center">
-                                <td>Sprite</td>
-                                <td>2</td>
-                                <td>10.00</td>
-                            </tr>
-                            <tr class="fila-0 text-center">
-                                <td>Fanta</td>
-                                <td>2</td>
-                                <td>10.00</td>
-                            </tr> -->
                         </tbody>
                     </table>
 
@@ -150,19 +135,33 @@
             </div>
             <div class="col-3 boleta">
                 <div class="row">
-                    <div class="col-4"></div>
-                    <div class="col-4">
-                        <h4><b>Boleta</b></h4>
-                    </div>
-                    <div class="col-4"></div>
+                    <h4 style="text-align: center;    width: 100%;"><b>Boleta</b></h4>
                 </div>
+                <div class="row" >
+                    
+                    <p >IGV: {{cabecera.igv}}</p> 
+                    <br>
+                    <p>BRUTO: {{cabecera.bruto}}</p>
+                    <br>
+                    <p>NETO: {{cabecera.neto}}</p>
+                    <br>
+                    <div class="col-12 text-center">
+                        <button style="background: #ffa900; color:white;" class="btn">COMPRAR</button>
+
+                    </div>
+                    
+                </div>
+                <br>
+
 
             </div>
 
         </div>
     </div>
 
+<script>
 
+</script>
 </body>
-
 </html>
+<!-- <app-footer></app-footer> -->

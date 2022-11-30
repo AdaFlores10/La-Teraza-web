@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,Sanitizer } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule,Routes } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http'
@@ -27,12 +27,12 @@ import { ValidacionComponent } from './Components/validacion/validacion.componen
 import { MenuAdminComponent } from './Components/menu-admin/menu-admin.component';
 import { CanActivateGuard } from './Service/can-activate.guard';
 import { CarritoComprasComponent } from './Components/carrito-compras/carrito-compras.component';
-<<<<<<< HEAD
+//<<<<<<< HEAD
 import { HamburguesaComponent } from './Components/hamburguesa/hamburguesa.component';
 import { DetalleproComponent } from './Components/detallepro/detallepro.component';
-=======
+//=======
 import { FooterComponent } from './Components/footer/footer.component';
->>>>>>> 299d537055e7a797493b50f45def665545b88752
+// 299d537055e7a797493b50f45def665545b88752
 
 
 
@@ -48,12 +48,12 @@ import { FooterComponent } from './Components/footer/footer.component';
     ValidacionComponent,
     MenuAdminComponent,
     CarritoComprasComponent,
-<<<<<<< HEAD
+//<<<<<<< HEAD
     HamburguesaComponent,
     DetalleproComponent,
-=======
+//=======
     FooterComponent,
->>>>>>> 299d537055e7a797493b50f45def665545b88752
+//>>>>>>> 299d537055e7a797493b50f45def665545b88752
 
     
 

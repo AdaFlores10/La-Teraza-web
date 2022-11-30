@@ -2,17 +2,31 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DetalleVenta } from '../Models/DetalleVenta';
 import { Observable } from 'rxjs';
+import { CabeceraVenta } from '../Models/CabeceraVenta';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoComprasService {
 
-  private url:string="http://localhost:8080/detalle/detalleCarrito/1";
+  private url:string="http://localhost:8080/detalle/detalleCarrito/";
 
   constructor(private http:HttpClient) { }
 
-  listarCabeceras():Observable<DetalleVenta[]>{
-    return this.http.get<DetalleVenta[]>(this.url);
+  listarDetalles(idUser:number):Observable<DetalleVenta[]>{
+    return this.http.get<DetalleVenta[]>(this.url+idUser);
   }
+
+  actualizarCant(id:number,item:DetalleVenta){
+    return this.http.put("http://localhost:8080/detalle/detalleCarrito/"+id,item);
+  }
+
+  eliminarCarrito(id:number){
+    return this.http.delete("http://localhost:8080/detalle/detalleCarritodelete/"+id);
+  }
+
+  getCabecera(idUser:number):Observable<CabeceraVenta>{
+    return this.http.get<CabeceraVenta>("http://localhost:8080/cabecera/cabeceraCarrito/"+idUser);
+  }
+
 }

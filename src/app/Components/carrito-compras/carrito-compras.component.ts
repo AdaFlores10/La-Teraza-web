@@ -1,4 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
+// import { isNgTemplate } from '@angular/compiler';
+import { Component, OnInit } from '@angular/core';
+import { NgModel } from '@angular/forms';
+import { CabeceraVenta } from 'src/app/Models/CabeceraVenta';
 //import { DOCUMENT } from '@angular/platform-browser';
 import { DetalleVenta } from 'src/app/Models/DetalleVenta';
 import { CarritoComprasService } from 'src/app/Service/carrito-compras.service';
@@ -10,34 +13,57 @@ import { CarritoComprasService } from 'src/app/Service/carrito-compras.service';
 })
 export class CarritoComprasComponent implements OnInit {
 
+  conf: boolean=true;
+  valor: string="EDITAR";
+
+
+  cabecera: CabeceraVenta;
+
   clase=0
   detalleVentas:DetalleVenta[]
-  constructor(private detalleService:CarritoComprasService) {
 
+  constructor(private detalleService:CarritoComprasService) {
    }
 
   ngOnInit(): void {
-    this.detalleService.listarCabeceras()
+    this.listarDetalles();
+    this.getCabeceras();
+  }
+
+  listarDetalles(){
+    this.detalleService.listarDetalles(1)
     .subscribe(data=>{
         this.detalleVentas=data;
-        console.log(this.detalleVentas)
       }
     )
   }
-
-  editarClase(){
-    if (this.clase==0){
-      this.clase=1
+  //localStorage
+  procesar(item : DetalleVenta){
+    if(this.conf==true){
+      this.conf=false;
+      this.valor="GUARDAR"
     }else{
-      this.clase=0
+      this.conf=true;
+      this.detalleService.actualizarCant(item.idDetalleVenta,item).subscribe(data=>{
+        //this.detalleVentas=this.detalleVentas.filter(r=>r.idDetalleVenta!==item.idDetalleVenta);
+        this.listarDetalles();
+        this.getCabeceras();
+      })
     }
-    console.log("salida")
-    console.log(this.clase)
+    
   }
 
-  pintar(item:DetalleVenta){
-    console.log(item)
+  eliminar(id:number){
+    this.detalleService.eliminarCarrito(id).subscribe(data=>{
+      this.listarDetalles();
+      this.getCabeceras();
+    })
   }
 
+  getCabeceras(){
+    this.detalleService.getCabecera(1).subscribe(cabecera=>{
+      this.cabecera=cabecera
+    })
+  }
 
 }
