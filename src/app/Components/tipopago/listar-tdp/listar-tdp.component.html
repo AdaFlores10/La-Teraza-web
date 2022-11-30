@@ -1,0 +1,29 @@
+<div class="card border-primary mb-3 mt-3">
+    
+    <div class="card-body text-primary text-center">
+      <h5 class="card-title">Listado de Tipos de Pago</h5>
+      <div class="card-header"> Tipos de Pago registrados</div>
+      <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tipo de Pago</th>
+                <th>Acciones</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let  tipopago of tipospago">
+                <td>{{tipopago.idTipoPago}}</td>
+                <td>{{tipopago.tipoPago}}</td>
+                
+                <td><button  (click)="Editar(tipopago)"  class="btn btn-success">Editar</button>
+                    <button  (click)="Delete(tipopago)"   class="btn btn-danger ms-3" style="margin-left: 10px;">Eliminar</button></td>
+            </tr>
+          </tbody>
+      </table>
+      <a href="#" routerLink="/cliente/cliente-addtdp" routerLinkActive="active" class="btn btn-primary">Crear Tipo de Pago</a>
+      
+    </div>
+  </div>

@@ -13,6 +13,22 @@ export class LoginService {
   
   constructor(private http:HttpClient) { }
 
+  getUsers():Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.urlEndPoint + "/usuarios");
+  }
+  // editar
+  getUserId(idUser:number){
+    return this.http.get<Usuario>(this.urlEndPoint+"/usuario/"+idUser);
+  }
+
+  createUser(user:Usuario){
+    return this.http.post<Usuario>(this.urlEndPoint + "/usuarionew",user)
+  }
+
+  updateUser(user:Usuario){
+    return this.http.put<Usuario>(this.urlEndPoint+"/usuarioupdate/"+user.idUsuario,user);
+  }
+
   generaToken(user:String,passw:String){
     return this.http.get<number>(this.urlEndPoint+"/"+user+"/"+passw);
   }

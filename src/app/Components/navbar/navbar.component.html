@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="
+height: 0;
+">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body >
     <!-- Header -->
     <header
       id="js-header"
@@ -94,9 +96,9 @@
                     </a>
                   </li>
                   <li>
-                    <a
+                    <a data-toggle="modal" data-target="#exampleModal"
                       class="d-block g-color-black g-color-primary--hover g-text-underline--none--hover g-font-weight-400 g-py-5 g-px-20"
-                      href="/registro"
+                      href="#"
                     >
                       Regístrate
                     </a>
@@ -198,7 +200,7 @@
                   <a
                     id="nav-link--home"
                     class="nav-link text-uppercase g-color-white g-color-primary--hover g-px-5 g-py-20"
-                    href="/ofertas/promos"
+                    href="/hamburguesas?id=1"
                   >
                     MAKIS
                   </a>
@@ -207,7 +209,7 @@
                   <a
                     id="nav-link--home"
                     class="nav-link text-uppercase g-color-white g-color-primary--hover g-px-5 g-py-20"
-                    href="/ofertas/combos-personales"
+                    href="/hamburguesas?id=2"
                   >
                     ALITAS
                   </a>
@@ -226,7 +228,7 @@
                   <a
                     id="nav-link--home"
                     class="nav-link text-uppercase g-color-white g-color-primary--hover g-px-5 g-py-20"
-                    href="/ofertas/pastas"
+                    href="/hamburguesas?id=4"
                   >
                     BRASA Y PARRILLAS
                   </a>
@@ -235,12 +237,12 @@
                   <a
                     id="nav-link--home"
                     class="nav-link text-uppercase g-color-white g-color-primary--hover g-px-5 g-py-20"
-                    href="/ofertas/piqueos"
+                    href="/hamburguesas?id=5"
                   >
                     PIZZAS
                   </a>
                 </li>
-                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                <!-- <li class="nav-item g-mx-10--lg g-mx-15--xl">
                   <a
                     id="nav-link--home"
                     class="nav-link text-uppercase g-color-white g-color-primary--hover g-px-5 g-py-20"
@@ -266,12 +268,12 @@
                   >
                     RON
                   </a>
-                </li>
+                </li> -->
                 <li class="nav-item g-mx-10--lg g-mx-15--xl">
                   <a
                     id="nav-link--home"
                     class="nav-link text-uppercase g-color-white g-color-primary--hover g-px-5 g-py-20"
-                    href="/ofertas/peruanitos"
+                    href="/hamburguesas?id=9"
                   >
                     BEBIDAS SIN ALCOHOL
                   </a>
@@ -284,6 +286,90 @@
         </nav>
       </div>
     </header>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registro de Usuario</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+          <div class="mb-2">
+              <label for="" class="form-label fw-bolder">Nombre</label><br>
+              <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="usuario.nombre">
+          </div>
+          <div class="mb-2">
+            <label for="" class="form-label fw-bolder">Apellido</label><br>
+            <input type="text" class="form-control" name="apellido" id="apellido" [(ngModel)]="usuario.apellido">
+        </div>
+        <div class="mb-2">
+          <label for="" class="form-label fw-bolder">Usuario</label><br>
+          <input type="text" class="form-control" name="usuario" id="usuario" [(ngModel)]="usuario.usuario">
+        </div>
+        <div class="mb-2">
+          <label for="" class="form-label fw-bolder">Contraseña</label><br>
+          <input type="text" class="form-control" name="contrasena" id="contrasena" [(ngModel)]="usuario.contrasena">
+        </div>
+        <div class="mb-2">
+          <label for="" class="form-label fw-bolder">Genero</label><br>
+          <select name="sexo"  [(ngModel)]="usuario.sexo" class="form-control ps-2" aria-label="Default select example">
+              <option [ngValue]="undefined" selected>--Seleccione--</option>
+              <option [ngValue]="'Masculino'">Masculino</option>
+              <option [ngValue]="'Femenino'">Femenino</option>
+          </select>
+      </div>
+        <div class="mb-2">
+          <label for="" class="form-label fw-bolder">Direccion</label><br>
+          <input type="text" class="form-control" name="direccion" id="direccion" [(ngModel)]="usuario.direccion">
+        </div>
+        <div class="mb-2">
+          <label for="" class="form-label fw-bolder">Telefono</label><br>
+          <input type="number" class="form-control" name="telefono" id="telefono" [(ngModel)]="usuario.telefono">
+        </div>
+        <div class="mb-2">
+          <label for="" class="form-label fw-bolder">Dni</label><br>
+          <input type="text" class="form-control" name="dni" id="dni" [(ngModel)]="usuario.dni">
+        </div>
+          <div class="mb-2">
+              <label for="" class="form-label fw-bolder">Estado</label><br>
+              <select name="estado"  [(ngModel)]="usuario.estado" class="form-control ps-2" aria-label="Default select example">
+                  <option [ngValue]="undefined" selected>--Seleccione--</option>
+                  <option [ngValue]="1">Activo</option>
+                  <option [ngValue]="0">Inactivo</option>
+              </select>
+          </div>
+          <div class="mb-2">
+            <label for="" class="form-label fw-bolder">Rol</label><br>
+            <select name="estado"  [(ngModel)]="usuario.rol" class="form-control ps-2" aria-label="Default select example">
+                <option [ngValue]="undefined" selected>--Seleccione--</option>
+                <option *ngFor="let rol of roles"  [ngValue]="rol">{{rol.rol}}</option>
+            </select>
+        </div>
+          
+          
+          
+          
+          
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- End Header -->
     <script type="text/javascript">
       alert("ASD");
