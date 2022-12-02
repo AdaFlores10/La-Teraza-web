@@ -81,8 +81,9 @@ export class NavbarComponent implements OnInit {
   }
 
   logoutUser(){
+    localStorage.removeItem("idUser");
     this.loginService.logout();
-    location.reload();
+    window.location.href="/index";
   }
 
 }

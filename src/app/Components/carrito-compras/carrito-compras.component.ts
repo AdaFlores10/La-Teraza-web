@@ -26,12 +26,15 @@ export class CarritoComprasComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    
     this.listarDetalles();
     this.getCabeceras();
   }
 
   listarDetalles(){
-    this.detalleService.listarDetalles(1)
+    let iduser=localStorage.getItem("iduser"); 
+
+    this.detalleService.listarDetalles(Number (iduser))
     .subscribe(data=>{
         this.detalleVentas=data;
       }
@@ -48,6 +51,7 @@ export class CarritoComprasComponent implements OnInit {
         //this.detalleVentas=this.detalleVentas.filter(r=>r.idDetalleVenta!==item.idDetalleVenta);
         this.listarDetalles();
         this.getCabeceras();
+        this.valor="EDITAR"
       })
     }
     
@@ -61,7 +65,9 @@ export class CarritoComprasComponent implements OnInit {
   }
 
   getCabeceras(){
-    this.detalleService.getCabecera(1).subscribe(cabecera=>{
+    let iduser=localStorage.getItem("iduser"); 
+
+    this.detalleService.getCabecera(Number (iduser)).subscribe(cabecera=>{
       this.cabecera=cabecera
     })
   }
