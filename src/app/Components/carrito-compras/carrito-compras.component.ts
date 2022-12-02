@@ -12,7 +12,7 @@ import { CarritoComprasService } from 'src/app/Service/carrito-compras.service';
   styleUrls: ['./carrito-compras.component.css']
 })
 export class CarritoComprasComponent implements OnInit {
-
+  
   conf: boolean=true;
   valor: string="EDITAR";
 
@@ -32,9 +32,8 @@ export class CarritoComprasComponent implements OnInit {
   }
 
   listarDetalles(){
-    let iduser=localStorage.getItem("iduser"); 
-
-    this.detalleService.listarDetalles(Number (iduser))
+    let idUser=localStorage.getItem("iduser");
+    this.detalleService.listarDetalles(Number(idUser))
     .subscribe(data=>{
         this.detalleVentas=data;
       }
@@ -65,9 +64,8 @@ export class CarritoComprasComponent implements OnInit {
   }
 
   getCabeceras(){
-    let iduser=localStorage.getItem("iduser"); 
-
-    this.detalleService.getCabecera(Number (iduser)).subscribe(cabecera=>{
+    let idUser=localStorage.getItem("iduser");
+    this.detalleService.getCabecera(Number(idUser)).subscribe(cabecera=>{
       this.cabecera=cabecera
     })
   }
