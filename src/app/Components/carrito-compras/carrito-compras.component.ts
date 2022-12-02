@@ -70,4 +70,17 @@ export class CarritoComprasComponent implements OnInit {
     })
   }
 
+  comprar(){
+    this.detalleService.venderCab(this.cabecera.idCabecera,this.cabecera).subscribe(dasd=>{
+
+    })
+    console.log(this.cabecera.idCabecera);
+    console.log(this.cabecera);
+    window.location.reload();
+    // this.getCabeceras();
+    // this.listarDetalles();
+    
+    
+  }
+
 }

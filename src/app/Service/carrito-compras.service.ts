@@ -41,4 +41,8 @@ export class CarritoComprasService {
     return this.http.get<CabeceraVenta>("http://localhost:8080/cabecera/"+"cabeceraidu/"+idUser);
   }
 
+  venderCab(idCabe:number,cabecera:CabeceraVenta){
+      return this.http.put("http://localhost:8080/cabecera/venderCabecera/"+idCabe,cabecera);
+  }
+
 }
