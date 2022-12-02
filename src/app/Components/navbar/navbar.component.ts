@@ -43,6 +43,7 @@ export class NavbarComponent implements OnInit {
     );
     
     this.loggedIn=this.loginService.isLoggedIn();
+    console.log(this.location.path())
     if (this.location.path()=="/carrito-compras"){
       this.clase=false;
       console.log("asd")
