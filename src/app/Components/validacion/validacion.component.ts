@@ -24,16 +24,22 @@ export class ValidacionComponent implements OnInit {
     this.loginService.getUserbyUaser(this.username)
     .subscribe(data=>{
       this.user=data;
+      
       if(this.user.estado==1){
         if(this.user.rol.rol=="Admin"){
           console.log("entro aqui")
           this.loginService.loginUser("Accedio")
           localStorage.setItem("user",this.username.toString());
           window.location.href="cliente";
+          localStorage.setItem("iduser",this.user.idUsuario.toString()); 
         }else if(this.user.rol.rol=="Mesero"){
   
         }else{
-
+          console.log("entro aqui")
+          this.loginService.loginUser("Accedio")
+          localStorage.setItem("user",this.username.toString());
+          window.location.href="index";
+          localStorage.setItem("iduser",this.user.idUsuario.toString()); 
         }
       }else{
         swal.fire({

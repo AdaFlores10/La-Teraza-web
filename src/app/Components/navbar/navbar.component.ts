@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { Rol } from 'src/app/Models/Rol';
 import { Usuario } from 'src/app/Models/Usuario';
 import { RolService } from 'src/app/Service/rol.service';
+import { CabeceraVenta } from 'src/app/Models/CabeceraVenta';
+import { CarritoComprasService } from 'src/app/Service/carrito-compras.service';
+import swal from 'sweetalert2';
 
 
 
@@ -19,14 +22,18 @@ export class NavbarComponent implements OnInit {
   roles: Rol[]=[];
   public loggedIn = false;
   public usuario:Usuario = new Usuario()
+  public cabecera:CabeceraVenta = new CabeceraVenta()
 
   constructor(private router:Router,
     private loginService:LoginService,
     private location:Location,
-    private rolService: RolService
+    private rolService: RolService,
+    private carrito:CarritoComprasService
     ) { }
 
   clase=true;
+  clase2=false;
+
 
   ngOnInit(): void {
     
@@ -48,7 +55,29 @@ export class NavbarComponent implements OnInit {
       this.clase=false;
       console.log("asd")
     }
+    else if (this.location.path()=="/productodetalle"){
+      this.clase=true;
+      console.log("asd")
+    }
 
+  }
+
+  Registrar(user:Usuario){
+
+    this.loginService.createUser(user)
+    .subscribe(data=>{
+      console.log(data.idUsuario)
+      this.carrito.addCabCarrito(data.idUsuario).subscribe(d=>{
+        console.log(d.idCabecera);
+      })
+      swal.fire({
+        icon: 'success',
+        title: 'Bienvenido',
+        text: 'Gracias por la Preferencia',
+        footer: '<a href="/index">Ir al Inicio</a>'
+      })
+      this.router.navigate(["/login"])
+    })
   }
 
   logoutUser(){
