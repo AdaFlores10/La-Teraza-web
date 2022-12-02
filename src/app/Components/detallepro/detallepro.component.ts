@@ -46,14 +46,40 @@ export class DetalleproComponent implements OnInit {
 
   AgregarAlCarrito(detalle:DetalleVenta){
     if(this.loginService.isLoggedIn()){
-      this.detalle.cabecera=this.cabecera;
-      this.detalle.producto=this.producto;
-      this.detalle.precio=this.producto.precio;
-      this.detalle.estado=1;
-        this.carrito.createDetalle(detalle)
-        .subscribe(data=>{
-          alert("Se Agrego Con exito");
-        })
+      console.log("Primera Validacion")
+      if(this.detalle.cantidad==undefined){
+            console.log("Segunda Validacion")
+          }else{
+            this.carrito.listarDetalles(this.cabecera.usuario.idUsuario).subscribe(data=>{
+              let encontro=0;
+              for(let de of data){
+                console.log(de);
+                  if(de.producto.idProducto==this.producto.idProducto){
+                    encontro=1;
+                    console.log("Encontro Producto Igual")
+                    de.cantidad= this.detalle.cantidad+de.cantidad;
+                    console.log(de.cantidad);
+                    this.carrito.actualizarCant(de.idDetalleVenta,de).subscribe(detalleup=>{
+                    console.log("Detalle up")
+                    })
+                    console.log("Rompe");
+                    break;
+                  }
+              }
+              if(encontro==0){
+                    this.detalle.cabecera=this.cabecera;
+                    this.detalle.producto=this.producto;
+                    this.detalle.precio=this.producto.precio;
+                    this.detalle.estado=1;
+                    this.carrito.createDetalle(detalle)
+                      .subscribe(data=>{
+                      alert("Se Agrego Con exito");
+                      })
+              }
+              })
+
+          }
+      
     }else{
       swal.fire({
         icon: 'info',
@@ -63,6 +89,13 @@ export class DetalleproComponent implements OnInit {
       this.router.navigate(["/login"])
       console.log("Ingresa o Registrate")
     }
+
+    
+    
+
+
+        
+    
     
   }
 

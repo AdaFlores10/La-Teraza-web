@@ -132,9 +132,9 @@
               <div class="product-quantity-container col-3">
                 <label for="product-quantity"></label>
                 <select name="cantidad" [(ngModel)]="detalle.cantidad" class="form-control" style="padding: 0;">
-                  <option
+                  <option [ngValue]="undefined" selected>--Seleccione--</option>
+                  <option 
                   [ngValue]="1"
-                  id="option-1"
                   >
                 1
               </option>
