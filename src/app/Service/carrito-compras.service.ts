@@ -17,6 +17,10 @@ export class CarritoComprasService {
     return this.http.get<DetalleVenta[]>(this.url+idUser);
   }
 
+  createDetalle(detalle:DetalleVenta){
+    return this.http.post<DetalleVenta>("http://localhost:8080/detalle" + "/detallenew",detalle)
+  }
+
   actualizarCant(id:number,item:DetalleVenta){
     return this.http.put("http://localhost:8080/detalle/detalleCarrito/"+id,item);
   }
@@ -27,6 +31,14 @@ export class CarritoComprasService {
 
   getCabecera(idUser:number):Observable<CabeceraVenta>{
     return this.http.get<CabeceraVenta>("http://localhost:8080/cabecera/cabeceraCarrito/"+idUser);
+  }
+
+  addCabCarrito(idUser:number){
+    return this.http.post<CabeceraVenta>("http://localhost:8080/cabecera/cabeceraregistro/"+idUser,CabeceraVenta);
+  }
+  // editar
+  getCabeU(idUser:number){
+    return this.http.get<CabeceraVenta>("http://localhost:8080/cabecera/"+"cabeceraidu/"+idUser);
   }
 
 }

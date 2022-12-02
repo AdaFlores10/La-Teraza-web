@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
     .subscribe(data=>{
       if(data==1){
         localStorage.setItem("user",this.username.toString()); 
+        
         window.location.href="validation";
       }
       

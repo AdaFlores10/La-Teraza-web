@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <title>Carrito de compra</title>
   </head>
-
   <body>
+    
     <section class="cpnazo__home__grid">
       <div class="container g-py-30">
         <h2 class="cpnazo__sub-title">¡Encuentra lo que deseas comer hoy!</h2>
@@ -122,44 +122,49 @@
               </div>
             </div>
           </div>
+          
+          
 
           <div class="product-bg-container product-general-info variation-info">
             <div class="row"></div>
+            
             <div class="row" data-sticky-button>
               <div class="product-quantity-container col-3">
                 <label for="product-quantity"></label>
-                <select class="form-control" style="padding: 0;">
+                <select name="cantidad" [(ngModel)]="detalle.cantidad" class="form-control" style="padding: 0;">
                   <option
+                  [ngValue]="1"
                   id="option-1"
-                  value="1">
+                  >
                 1
               </option>
                           <option
                   id="option-2"
-                  value="2">
+                  [ngValue]="2">
                 2
               </option>
                           <option
                   id="option-3"
-                  value="3">
+                  [ngValue]="3">
                 3
               </option>
                           <option
                   id="option-4"
-                  value="4">
+                  [ngValue]="4">
                 4
               </option>
                           <option
                   id="option-5"
-                  value="5">
+                  [ngValue]="5">
                 5
               </option>
                           <option
                   id="option-6"
-                  value="6">
+                  [ngValue]="6">
                 6
               </option>
                 </select>
+              
               </div>
               <div class="col-9">
                 <input
@@ -168,16 +173,24 @@
                   value="PR042HL1696XULPE-10504695"
                   id="selected-option"
                 />
-                <button (click)="ValidarUser()"
+                <input id="producto" name="producto" type="hidden" value={{producto}} [(ngModel)]="detalle.producto">
+                <input id="precio" name="precio" type="hidden" value="{{producto.precio}}" [(ngModel)]="detalle.precio">
+                <input id="cabecera" name="cabecera" type="hidden" value="{{cabecera}}" [(ngModel)]="detalle.cabecera">
+              
+                <button (click)="AgregarAlCarrito(detalle)"
                   id="buy-now"
-                  class="btn btn-lg buy-now-button " style="background-color: #000; color: red;"
+                  class="btn btn-lg buy-now-button " style="    background-color: #464855;
+                  color: white;"
                 >
                   Añadir al carrito
                 </button>
+                
               </div>
             </div>
           </div>
+          
         </div>
+        
       </div>
       <h2 class="banner-block-title">
         Platillos delicios y sabrosos a tu disposicion
