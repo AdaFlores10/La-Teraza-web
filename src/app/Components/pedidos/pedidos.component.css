@@ -1,0 +1,25 @@
+
+body{
+
+    background-position:center;
+    background-size:cover;
+    min-height:88vh;
+}
+   
+.contenido{
+    width:100%;
+    height:75vh;
+    display:flex;
+    flex-direction:column;
+}
+
+h1{
+    color:#fff;
+    font-size:50px;
+    text-align:center;
+    margin:20px 5px;
+    font-family:consolas;
+    width: 80%;
+    font-weight:900;
+    text-transform: uppercase;
+} 

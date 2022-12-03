@@ -194,21 +194,21 @@
       </div>
       <h2 class="banner-block-title">
         Platillos delicios y sabrosos a tu disposicion
-               </h2>
+              </h2>
       <div class="slider-wrapper slider-wrapper-with-card-footer" style="width: 1664px;">
           
-        <a class="slider-panel product-card slider-card-with-footer" href="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/WhatsApp%20Image%202022-06-18%20at%2012.07.07%20AM%20(1).jpeg/:/rs=w:360,h:271,cg:true,m/cr=w:360,h:271/qt=q:14" alt="">
+        <a *ngFor="let producto of productos" (click)="ObtenerInfo(producto)" class="slider-panel product-card slider-card-with-footer" href="#" alt="">
     <div class="product-image">
     
     <picture class="image-wrapper">
-    <img src="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/WhatsApp%20Image%202022-06-18%20at%2012.07.07%20AM%20(1).jpeg/:/rs=w:360,h:271,cg:true,m/cr=w:360,h:271/qt=q:14" alt="" class="image">
+    <img style="height: 120px;" src="{{producto.imagen}}" alt="" class="image">
     </picture>
     </div>
     <div class="product-info ">
-    <div class="name">ASADO DE TIRA</div>
+    <div class="name">{{producto.producto}}</div>
     <div class="">
     <div class="lowest-price">
-    <span class="price-promotional">S/ 79.00</span>
+    <span class="price-promotional">S/ {{producto.precio}}.00</span>
     <span class="sprite sprite-cmr_pe-sm hidden-lg-up d-lg-none"></span>
     </div>
     </div>
@@ -217,106 +217,6 @@
     <button class="btn btn-sm card-footer-button">Ver producto</button>
     </div>
     </a>
-        <a class="slider-panel product-card slider-card-with-footer" href="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/WhatsApp%20Image%202022-06-18%20at%2012.07.08%20AM%20(3).jpeg/:/cr=t:38.51%25,l:17.25%25,w:80.65%25,h:40.57%25/rs=w:360,h:271,cg:true,m/qt=q:14;ad_id=v2_Y70HSfrGAujDSXvmE99Erv20gyEusmvhqiboP_jfddUwSYxWK3ZEoVF6A7WwGhx8OpBeKiwd1uiR77qhBD1LSIB0r_cRW7NSexCrKOVhClc5FrnPjN56_Y5zr0TcUBmJBXzQAtXBUnaOb8gXdJstvphF_51PfgWxpFu8HPIPeJ8%3D_ark184c028cfd71870562b" data-product-info="{&quot;sku&quot;:&quot;HU445EL1HNJ7LLPE&quot;,&quot;brand&quot;:&quot;Huawei&quot;}" data-ad-id="v2_Y70HSfrGAujDSXvmE99Erv20gyEusmvhqiboP_jfddUwSYxWK3ZEoVF6A7WwGhx8OpBeKiwd1uiR77qhBD1LSIB0r_cRW7NSexCrKOVhClc5FrnPjN56_Y5zr0TcUBmJBXzQAtXBUnaOb8gXdJstvphF_51PfgWxpFu8HPIPeJ8=_ark184c028cfd71870562b" data-sku="" style="width: 200px; margin-right: 8px; display: block; opacity: 1;">
-    <div class="product-image">
-    
-    <picture class="image-wrapper">
-    <img src="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/WhatsApp%20Image%202022-06-18%20at%2012.07.08%20AM%20(3).jpeg/:/cr=t:38.51%25,l:17.25%25,w:80.65%25,h:40.57%25/rs=w:360,h:271,cg:true,m/qt=q:14" alt="" class="image">
-    </picture>
-    </div>
-    <div class="product-info ">
-    <div class="name">CHORIZO CON PAPAS</div>
-    <div class="">
-    <div class="lowest-price">
-    <span class="price-main-md">S/ 20.00</span>
-    <span class="sprite sprite-cmr_pe-sm hidden-lg-up d-lg-none"></span>
-    </div>
-    </div>
-    </div>
-    <div class="card-footer">
-    <button class="btn btn-sm card-footer-button">Ver producto</button>
-    </div>
-    </a>
-        <a class="slider-panel product-card slider-card-with-footer" href="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/WhatsApp%20Image%202022-06-18%20at%2012.07.08%20AM.jpeg/:/cr=t:30.38%25,l:0%25,w:100%25,h:50.3%25/rs=w:360,h:271,cg:true/qt=q:37" data-sku="XI061EL0Q4L1VLPE" style="width: 200px; margin-right: 8px; display: block; opacity: 1;">
-    <div class="product-image">
-    
-    <picture class="image-wrapper">
-    <img src="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/WhatsApp%20Image%202022-06-18%20at%2012.07.08%20AM.jpeg/:/cr=t:30.38%25,l:0%25,w:100%25,h:50.3%25/rs=w:360,h:271,cg:true/qt=q:37" class="">
-    </picture>
-    </div>
-    <div class="product-info ">
-    <div class="name">CHULETA CON PAPAS</div>
-    <div class="">
-    <div class="lowest-price">
-    <span class="price-promotional">S/ 26.00</span>
-    <span class="sprite sprite-cmr_pe-sm hidden-lg-up d-lg-none"></span>
-    </div>
-    </div>
-    </div>
-    <div class="card-footer">
-    <button class="btn btn-sm card-footer-button">Ver producto</button>
-    </div>
-    </a>
-    <a class="slider-panel product-card slider-card-with-footer" href="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/Salchipapas-088.jpg/:/cr=t:9.1%25,l:11.11%25,w:75.16%25,h:84.75%25/rs=w:360,h:271,cg:true,m/qt=q:37" data-sku="XI061EL0Q4L1VLPE" style="width: 200px; margin-right: 8px; display: block; opacity: 1;">
-      <div class="product-image">
-      
-      <picture class="image-wrapper">
-      <img src="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/Salchipapas-088.jpg/:/cr=t:9.1%25,l:11.11%25,w:75.16%25,h:84.75%25/rs=w:360,h:271,cg:true,m/qt=q:37" class="">
-      </picture>
-      </div>
-      <div class="product-info ">
-      <div class="name">SALCHIPAPA</div>
-      <div class="">
-      <div class="lowest-price">
-      <span class="price-promotional">S/ 19.00</span>
-      <span class="sprite sprite-cmr_pe-sm hidden-lg-up d-lg-none"></span>
-      </div>
-      </div>
-      </div>
-      <div class="card-footer">
-      <button class="btn btn-sm card-footer-button">Ver producto</button>
-      </div>
-      </a>
-      <a class="slider-panel product-card slider-card-with-footer" href="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/_DSC7205-0001.JPG/:/cr=t:0%25,l:5.66%25,w:88.68%25,h:100%25/rs=w:360,h:271,cg:true/qt=q:37" data-sku="XI061EL0Q4L1VLPE" style="width: 200px; margin-right: 8px; display: block; opacity: 1;">
-        <div class="product-image">
-        
-        <picture class="image-wrapper">
-        <img src="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/_DSC7205-0001.JPG/:/cr=t:0%25,l:5.66%25,w:88.68%25,h:100%25/rs=w:360,h:271,cg:true/qt=q:37" class="">
-        </picture>
-        </div>
-        <div class="product-info ">
-        <div class="name">PORCIÓN DE PAPAS</div>
-        <div class="">
-        <div class="lowest-price">
-        <span class="price-promotional">S/ 10.00</span>
-        <span class="sprite sprite-cmr_pe-sm hidden-lg-up d-lg-none"></span>
-        </div>
-        </div>
-        </div>
-        <div class="card-footer">
-        <button class="btn btn-sm card-footer-button">Ver producto</button>
-        </div>
-        </a>
-        <a class="slider-panel product-card slider-card-with-footer" href="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/Pollo%20-039.jpg/:/cr=t:5.87%25,l:5.59%25,w:79.18%25,h:89.29%25/rs=w:360,h:271,cg:true,m/qt=q:14" data-sku="XI061EL0Q4L1VLPE" style="width: 200px; margin-right: 8px; display: block; opacity: 1;">
-          <div class="product-image">
-          
-          <picture class="image-wrapper">
-          <img src="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/Pollo%20-039.jpg/:/cr=t:5.87%25,l:5.59%25,w:79.18%25,h:89.29%25/rs=w:360,h:271,cg:true,m/qt=q:14" class="">
-          </picture>
-          </div>
-          <div class="product-info ">
-          <div class="name">1/4 DE POLLO</div>
-          <div class="">
-          <div class="lowest-price">
-          <span class="price-promotional">S/ 26.00</span>
-          <span class="sprite sprite-cmr_pe-sm hidden-lg-up d-lg-none"></span>
-          </div>
-          </div>
-          </div>
-          <div class="card-footer">
-          <button class="btn btn-sm card-footer-button">Ver producto</button>
-          </div>
-          </a>
       </div>
     </div>
     

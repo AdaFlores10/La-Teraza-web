@@ -13,6 +13,7 @@ const routes:Routes =[
   {path:'cliente',component:ClienteComponent,
   children:[
     {path:'cliente-inicio',component:ClienteInicioComponent},
+    {path:'cliente-pedidos',component:PedidosComponent},
     //TODO PRODUCTO
     {path:'cliente-producto',component:ListarProComponent},
     {path:'cliente-addproducto',component:AddProComponent},
@@ -66,6 +67,7 @@ import { EditRolComponent } from './Components/Rol/edit-rol/edit-rol.component';
 import { ListarTdpComponent } from './Components/tipopago/listar-tdp/listar-tdp.component';
 import { AddTdpComponent } from './Components/tipopago/add-tdp/add-tdp.component';
 import { EditTdpComponent } from './Components/tipopago/edit-tdp/edit-tdp.component';
+import { PedidosComponent } from './Components/pedidos/pedidos.component';
 
 
 
@@ -98,6 +100,7 @@ import { EditTdpComponent } from './Components/tipopago/edit-tdp/edit-tdp.compon
     ListarTdpComponent,
     AddTdpComponent,
     EditTdpComponent,
+    PedidosComponent,
     
 
   ],

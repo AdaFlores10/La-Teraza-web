@@ -50,14 +50,21 @@ export class NavbarComponent implements OnInit {
     );
     
     this.loggedIn=this.loginService.isLoggedIn();
+    
     console.log(this.location.path())
     if (this.location.path()=="/carrito-compras"){
       this.clase=false;
       console.log("asd")
-    }
-    else if (this.location.path()=="/productodetalle"){
+    }else if (this.location.path()=="/productodetalle"){
       this.clase=true;
       console.log("asd")
+    }else if (this.location.path()=="/cliente"){
+      this.clase=false;
+      console.log("asd")
+    }
+    else if (this.location.path()=="/cliente/cliente-inicio"){
+      this.clase=false;
+      console.log("cliente inicio")
     }
 
   }

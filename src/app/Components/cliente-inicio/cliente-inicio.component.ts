@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/Models/Usuario';
+import { LoginService } from 'src/app/Service/login.service';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-cliente-inicio',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cliente-inicio.component.css']
 })
 export class ClienteInicioComponent implements OnInit {
-
-  constructor() { }
+  public user:Usuario= new Usuario();
+  username="";
+  constructor(private loginService:LoginService) { }
 
   ngOnInit(): void {
+    this.username=localStorage.getItem("user"); 
+    this.loginService.getUserbyUaser(this.username)
+    .subscribe(data=>{
+      this.user=data;})
+
   }
 
 }

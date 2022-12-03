@@ -45,4 +45,12 @@ export class CarritoComprasService {
       return this.http.put("http://localhost:8080/cabecera/venderCabecera/"+idCabe,cabecera);
   }
 
+  listarCabUser(idUser:number):Observable<CabeceraVenta[]>{
+    return this.http.get<CabeceraVenta[]>("http://localhost:8080/cabecera/cabeceracliente/"+idUser);
+  }
+
+  listarDetUser(idCab:number):Observable<DetalleVenta[]>{
+    return this.http.get<DetalleVenta[]>("http://localhost:8080/detalle/detallescliente/"+idCab);
+  }
+
 }

@@ -16,6 +16,7 @@ import { DetalleVenta } from 'src/app/Models/DetalleVenta';
   styleUrls: ['./detallepro.component.css']
 })
 export class DetalleproComponent implements OnInit {
+  productos:Producto[]=[];
   clase = false;
   detalle:DetalleVenta=new DetalleVenta();
   producto:Producto = new Producto();
@@ -27,6 +28,30 @@ export class DetalleproComponent implements OnInit {
     private location:Location, private carrito:CarritoComprasService) { }
 
   ngOnInit(): void {
+    this.productoService.getProductos().subscribe(
+      productos=>{
+        for (let p of productos){
+          if(p.idProducto==4){
+            this.productos.push(p);
+          }else if(p.idProducto==13){
+            this.productos.push(p);
+          }else if(p.idProducto==19){
+            this.productos.push(p);
+          }
+          else if(p.idProducto==25){
+            this.productos.push(p);
+          }else if(p.idProducto==38){
+            this.productos.push(p);
+          }else if(p.idProducto==42){
+            this.productos.push(p);
+          }
+        }
+        console.log(this.productos);
+            }
+    );
+
+
+
     let iduser=localStorage.getItem("iduser"); 
     console.log(iduser);
     this.carrito.getCabeU(+iduser!).subscribe(data=>{
@@ -98,9 +123,10 @@ export class DetalleproComponent implements OnInit {
     
     
   }
-
-  save(){
-
+  ObtenerInfo(producto:Producto):void{
+    localStorage.setItem("codPro",producto.idProducto.toString());
+    console.log(producto);
+    window.location.reload();
   }
 
 }
