@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Header de Bienvenida</title>
+  </head>
+  <body>
+    <div class="contenido">
+      <div class="card border-primary mb-3">
+        <div class="card-body text-primary text-center">
+          <h5 class="card-title">Listado de Usuarios</h5>
+          <div class="card-header">Usuarios registrados</div>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>idUsuario</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Usuario</th>
+                <th>Contraseña</th>
+                <th>Sexo</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Dni</th>
+                <th>Estado</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usuario of usuarios">
+                <td>{{ usuario.idUsuario }}</td>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.apellido }}</td>
+                <td>{{ usuario.usuario }}</td>
+                <td>{{ usuario.contrasena }}</td>
+                <td>{{ usuario.sexo }}</td>
+                <td>{{ usuario.direccion }}</td>
+                <td>{{ usuario.telefono }}</td>
+                <td>{{ usuario.dni }}</td>
+                <td *ngIf="usuario.estado==1">Activo</td>
+                <td *ngIf="usuario.estado==0">Inactivo</td>
+                <td>{{ usuario.rol.rol }}</td>
+
+                <td>
+                  <button
+                    class="btn btn-success"
+                  >
+                    Ver Detalles
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="#" data-toggle="modal" data-target="#exampleModal3"  class="btn btn-primary">Crear Usuario</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Registro de Usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <div class="modal-body">
+  
+          <style>
+            .bg{
+            background-image:url(../../../../assets/images/register.png);
+            background-position: center center;
+            background-size: cover;
+            
+        }
+        </style> 
+        
+        <!-- <div class="container w-75 bg-white rounded shadow" >
+             -->
+             <div class="row align-items-stretch" >
+                
+              <div class="col  rounded-end">
+                  <h2 class="fw-bold text-center py-6">Registrar Usuario</h2>
+          <form action="#">
+  
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-1 ">
+                    <label for="" class="form-label fw-bolder">Nombre</label><br>
+                    <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="usuario.nombre">
+                  </div>
+                </div>
+                <div class="col-md-6 ml-auto">
+                  <div class="mb-1">
+                    <label for="" class="form-label fw-bolder">Apellido</label><br>
+                    <input type="text" class="form-control" name="apellido" id="apellido" [(ngModel)]="usuario.apellido">
+                </div>
+                </div>
+                
+              </div>
+              <div class="mb-1">
+                <label for="" class="form-label fw-bolder">Usuario</label><br>
+                <input type="text" class="form-control" name="usuario" id="usuario" [(ngModel)]="usuario.usuario">
+              </div>
+              <div class="mb-1">
+                <label for="" class="form-label fw-bolder">Contraseña</label><br>
+                <input type="password" class="form-control" name="contrasena" id="contrasena" [(ngModel)]="usuario.contrasena">
+              </div>
+            
+            
+            
+          
+          <div class="mb-1">
+            <label for="" class="form-label fw-bolder">Genero</label><br>
+            <select name="sexo"  [(ngModel)]="usuario.sexo" class="form-control ps-2" aria-label="Default select example">
+                <option [ngValue]="undefined" selected>--Seleccione--</option>
+                <option [ngValue]="'Masculino'">Masculino</option>
+                <option [ngValue]="'Femenino'">Femenino</option>
+            </select>
+        </div>
+          <div class="mb-1">
+            <label for="" class="form-label fw-bolder">Direccion</label><br>
+            <input type="text" class="form-control" name="direccion" id="direccion" [(ngModel)]="usuario.direccion">
+          </div>
+  
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-1">
+                <label for="" class="form-label fw-bolder">Telefono</label><br>
+                <input type="number" class="form-control" name="telefono" id="telefono" [(ngModel)]="usuario.telefono">
+              </div>
+            </div>
+            <div class="col-md-6 ml-auto">
+              <div class="mb-1">
+                <label for="" class="form-label fw-bolder">Dni</label><br>
+                <input type="text" class="form-control" name="dni" id="dni" [(ngModel)]="usuario.dni">
+              </div>
+            </div>
+            
+          </div>
+  
+            <div class="mb-1">
+                <label for="" class="form-label fw-bolder">Estado</label><br>
+                <select name="estado"  [(ngModel)]="usuario.estado" class="form-control ps-2" aria-label="Default select example">
+                    <option [ngValue]="undefined" selected>--Seleccione--</option>
+                    <option [ngValue]="1">Activo</option>
+                </select>
+            </div>
+            <div class="mb-1">
+              <label for="" class="form-label fw-bolder">Rol</label><br>
+              <select name="estado"  [(ngModel)]="usuario.rol" class="form-control ps-2" aria-label="Default select example">
+                  <option [ngValue]="undefined" selected>--Seleccione--</option>
+                  <option *ngFor="let rol of roles"  [ngValue]="rol">{{rol.rol}}</option>
+              </select>
+          </div>
+            
+            
+            
+            
+            
+        </form>
+      </div>
+      <div  class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded" >
+  
+      </div>
+      
+  </div>
+      <!-- 
+  </div> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button (click)="Registrar(usuario)" type="button" data-dismiss="modal" class="btn btn-primary">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="../../assets/js/bootsnav.js"></script>
+  </body>
+</html>
