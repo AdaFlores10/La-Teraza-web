@@ -5,6 +5,9 @@
     <meta name="viewport"content="width=device-width,initial-scale=1.0">
     <title>Header de Bienvenida</title>
 	<style>
+        body{
+            background-image: url(../../../assets/images/header-bg.jpg);
+        }
 		.contenido{
     width:100%;
     height:75vh;
@@ -12,19 +15,31 @@
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    background-image: url(../../../assets/images/header-bg.jpg);
+    
 	background-repeat: no-repeat;
 	background-size: cover;
+    background-color: rgba(36, 35, 35, 0.8);
+    
 }
 	</style>
 </head>
 <body>
     <div class="contenido">
         
-        <h1 class="">Bienvenido(a) {{user.nombre}} {{user.apellido}} </h1>
+        <div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center st-header-content">
+					<div class="logo"><a href=""><img src="https://img1.wsimg.com/isteam/ip/1ad7ed0b-0dd0-41a8-8392-473405608988/Copy%20of%20Terraza%20chico2-0001.png/:/rs=w:300,h:100,cg:true,m/cr=w:300,h:100/qt=q:" alt=""></a></div>
+					<div class="st-header-title">
+						<h2>Bienvenido(a) <span>{{user.nombre}} {{user.apellido}}</span></h2>
+						<p>Recuerda Sonreir:)</p>
+					</div>
+				</div>
+			</div>
+		</div>
         
         
-    
+
     </div>
     <script src="../../assets/js/bootsnav.js"></script>
 </body>

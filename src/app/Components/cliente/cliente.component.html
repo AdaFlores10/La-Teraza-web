@@ -97,12 +97,6 @@
               Mis pedidos
             </a>
           </li>
-          <li *ngIf="admin && (rol==3)">
-            <a href="#" class="nav-link text-white">
-              <i class="fa-regular fa-user"></i>
-              Mi cuenta
-            </a>
-          </li>
           <li *ngIf="admin && (rol==1 || rol==2)">
             <a href="#"[routerLink]="['/cliente/cliente-producto']" routerLinkActive="active" class="nav-link text-white">
               <i class="fa-sharp fa-solid fa-box"></i>
