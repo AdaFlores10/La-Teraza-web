@@ -21,6 +21,9 @@ export class DetalleproComponent implements OnInit {
   detalle:DetalleVenta=new DetalleVenta();
   producto:Producto = new Producto();
   cabecera:CabeceraVenta= new CabeceraVenta();
+  mensaje:String="";
+
+
 
 
 
@@ -73,8 +76,10 @@ export class DetalleproComponent implements OnInit {
     if(this.loginService.isLoggedIn()){
       console.log("Primera Validacion")
       if(this.detalle.cantidad==undefined){
+            this.mensaje="Seleccione una cantidad"
             console.log("Segunda Validacion")
           }else{
+            this.mensaje=""
             this.carrito.listarDetalles(this.cabecera.usuario.idUsuario).subscribe(data=>{
               let encontro=0;
               for(let de of data){
@@ -86,11 +91,13 @@ export class DetalleproComponent implements OnInit {
                     console.log(de.cantidad);
                     this.carrito.actualizarCant(de.idDetalleVenta,de).subscribe(detalleup=>{
                     console.log("Detalle up")
+                    this.mensaje="Se agregó con éxito"
                     })
                     console.log("Rompe");
                     break;
                   }
               }
+              
               if(encontro==0){
                     this.detalle.cabecera=this.cabecera;
                     this.detalle.producto=this.producto;
@@ -98,7 +105,8 @@ export class DetalleproComponent implements OnInit {
                     this.detalle.estado=1;
                     this.carrito.createDetalle(detalle)
                       .subscribe(data=>{
-                      alert("Se Agrego Con exito");
+                      // alert("Se Agrego Con exito");
+                      this.mensaje="Se agregó con éxito"
                       })
               }
               })

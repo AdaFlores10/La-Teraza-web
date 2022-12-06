@@ -10,6 +10,8 @@ import swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  mensaje:String="";
   
   public user:Usuario = new Usuario()
   
@@ -20,16 +22,31 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(){
-    this.loginService.generaToken(this.username,this.password)
-    .subscribe(data=>{
-      if(data==1){
-        localStorage.setItem("user",this.username.toString()); 
-        
-        window.location.href="validation";
+    if(this.username==null||this.password==null || this.username=="" || this.password==""){
+      this.mensaje="Uno o más campos vacíos."
+    }else{
+      this.mensaje=""
+      this.loginService.generaToken(this.username, this.password)
+      .subscribe(data => {
+        if (data == 1) {
+          this.mensaje=""
+          localStorage.setItem("user", this.username.toString());
+          window.location.href = "validation";
+
+        }
+        else if (data==2){
+          this.mensaje="Contraseña incorrecta."
+        }
+        else{
+            this.mensaje="Usuario no registrado."
+        }
+
       }
-      
-    }
       )
+    }
+
+
+
 
 }
 

@@ -83,8 +83,7 @@
                         <input  [(ngModel)]="password" type="Password" class="form-control" name="Password">
                     </div>
                     <div class="mb-4">
-                        <input type="checkbox" name="connected" class="form-check-input">
-                        <label for="connected" class="form-check-label fw-normal">Mantenerme Conectado</label>
+                        <div id="txt_error">{{this.mensaje}}</div>
                     </div>
                     <div class="d-grid  ">
                         <button (click)="onSubmit()"   class="btn btn-primary fw-bold text-light">Ingresar ya</button>
