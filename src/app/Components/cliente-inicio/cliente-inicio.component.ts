@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/Models/Usuario';
+import { CargajsService } from 'src/app/Service/cargajs.service';
 import { LoginService } from 'src/app/Service/login.service';
 import { LoginComponent } from '../login/login.component';
 
@@ -11,7 +12,9 @@ import { LoginComponent } from '../login/login.component';
 export class ClienteInicioComponent implements OnInit {
   public user:Usuario= new Usuario();
   username="";
-  constructor(private loginService:LoginService) { }
+  constructor(private loginService:LoginService) { 
+    
+  }
 
   ngOnInit(): void {
     this.username=localStorage.getItem("user"); 

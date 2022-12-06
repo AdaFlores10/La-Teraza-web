@@ -133,6 +133,12 @@
               Tipo de Pago
             </a>
           </li>
+          <li *ngIf="admin && (rol==1)">
+            <a href="#"[routerLink]="['/cliente/cliente-pedidosadmin']" routerLinkActive="active" class="nav-link text-white">
+              <i class="fa-solid fa-box-open"></i>
+              Pedidos
+            </a>
+          </li>
         </ul>
         <hr />
         <!-- <div class="dropdown">

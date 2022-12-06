@@ -33,6 +33,8 @@ const routes:Routes =[
     //TODO USER
     {path:'cliente-usuarios',component:ListarUserComponent},
     {path:'cliente-adduser',component:AddUserComponent},
+    //TODO USER
+    {path:'cliente-pedidosadmin',component:PedidosAdminComponent},
   ]},
   {path:'carrito-compras',component:CarritoComprasComponent},
   {path:'hamburguesas',component:HamburguesaComponent},
@@ -73,6 +75,7 @@ import { EditTdpComponent } from './Components/tipopago/edit-tdp/edit-tdp.compon
 import { PedidosComponent } from './Components/pedidos/pedidos.component';
 import { ListarUserComponent } from './Components/Usuario/listar-user/listar-user.component';
 import { AddUserComponent } from './Components/Usuario/add-user/add-user.component';
+import { PedidosAdminComponent } from './Components/pedidos-admin/pedidos-admin.component';
 
 
 
@@ -108,6 +111,7 @@ import { AddUserComponent } from './Components/Usuario/add-user/add-user.compone
     PedidosComponent,
     ListarUserComponent,
     AddUserComponent,
+    PedidosAdminComponent,
     
 
   ],

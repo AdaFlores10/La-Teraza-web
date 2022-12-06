@@ -53,4 +53,8 @@ export class CarritoComprasService {
     return this.http.get<DetalleVenta[]>("http://localhost:8080/detalle/detallescliente/"+idCab);
   }
 
+  listarCabTodos():Observable<CabeceraVenta[]>{
+    return this.http.get<CabeceraVenta[]>("http://localhost:8080/cabecera/cabeceratodos");
+  }
+
 }
