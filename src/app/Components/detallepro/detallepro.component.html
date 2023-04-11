@@ -11,219 +11,65 @@
         <div class="cpnazo__layaut-grid"></div>
       </div>
     </section>
-    <div class="container">
-      <div class="product-info-container col-12 row mb-5" >
-        <div id="zoom-container" class="hide"><img /></div>
-        <div class="product-info-block product-gallery-block">
-          <div class="gallery-product-image">
-            <div id="product-modal">
-              <div id="modal-product-container">
-                <div class="product-modal-header">
-                  <link
-                    rel="stylesheet"
-                    href="https://assets.linio.com/assets/css/alice-product-3f70c0608a.css"
-                  />
-                  <button
-                    id="close-product-modal"
-                    class="header-icon-close-container btn-link hide"
-                    data-dismiss="modal-product"
-                  >
-                    <span
-                      class="icon icon-cross-circle header-icon-close"
-                    ></span>
-                  </button>
-                </div>
-                <!-- styls -->
-                <script type="text/javascript">
-                  window.addEventListener("load", function () {
-                    var css = document.createElement("link");
-                    css.rel = "stylesheet";
-                    css.href =
-                      "https://assets.linio.com/assets/css/alice-cc97a02c09.lazy.css";
-                    document.getElementsByTagName("head")[0].appendChild(css);
-                  });
-                </script>
-                <script
-                  type="text/javascript"
-                  src="https://assets.linio.com/assets/js/core-ea4a66d02d.js"
-                  defer
-                ></script>
-
-                <script type="text/javascript">
-                  window.DY = window.DY || {};
-                  DY.recommendationContext = {
-                    type: "PRODUCT",
-                    data: ["PR042HL1696XULPE-10504695"],
-                  };
-                </script>
-                <script type="text/javascript">
-                  window.ScarabQueue = window.ScarabQueue || [];
-                  window.addEventListener("load", function () {
-                    window.emarsys = new Emarsys();
-                  });
-
-                  ScarabQueue.push(["view", "PR042HL1696XULPE"]);
-
-                  ScarabQueue.push(["go"]);
-                </script>
-
-                <!-- imagen -->
-                <div class="product-modal-body">
-                  <div
-                    class="slider-container gallery-image-container"
-                    id="main-slider"
-                  >
-                    <div class="slider-wrapper">
-                      <div id="image-product" class="slider-panel">
-                        <figure>
-                          <picture>
-                            <img
-                              src="{{producto.imagen}}"
-                            />
-                          </picture>
-                        </figure>
-                      </div>
-                    </div>
-                    <div class="d-block d-lg-none">
-                      <div class="dot-nav">
-                        <div class="slider-pagination"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          id="display-zoom"
-          class="product-info-block product-buy-information-block"
-        >
-          <div class="product-title">
-            <!-- producto -->
-            <h1 class="col-12 product-title-box">
-              <span itemprop="name" class="product-name">
-                {{producto.producto}}</span
-              >
-            </h1>
-            <span class="body-base-sm">
-              {{producto.descripcion}}
-            </span>
-
-          </div>
-
-          <div class="product-price">
-            <div class="product-price-container option-container option-1">
-              <div class="product-price-lg">
-                <div class="lowest-price">
-                  <span class="price-main-md">S/ {{producto.precio}}.00 </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          
-
-          <div class="product-bg-container product-general-info variation-info">
-            <div class="row"></div>
-            
-            <div class="row" data-sticky-button>
-              <div class="product-quantity-container col-3">
-                <label for="product-quantity"></label>
-                <select name="cantidad" [(ngModel)]="detalle.cantidad" class="form-control" style="padding: 0;">
-                  <option [ngValue]="undefined" selected>--Seleccione--</option>
-                  <option 
-                  [ngValue]="1"
-                  >
-                1
-              </option>
-                          <option
-                  id="option-2"
-                  [ngValue]="2">
-                2
-              </option>
-                          <option
-                  id="option-3"
-                  [ngValue]="3">
-                3
-              </option>
-                          <option
-                  id="option-4"
-                  [ngValue]="4">
-                4
-              </option>
-                          <option
-                  id="option-5"
-                  [ngValue]="5">
-                5
-              </option>
-                          <option
-                  id="option-6"
-                  [ngValue]="6">
-                6
-              </option>
-                </select>
-              
-              </div>
-              <div class="col-9">
-                <input
-                  type="hidden"
-                  name="sku"
-                  value="PR042HL1696XULPE-10504695"
-                  id="selected-option"
-                />
-                <input id="producto" name="producto" type="hidden" value={{producto}} [(ngModel)]="detalle.producto">
-                <input id="precio" name="precio" type="hidden" value="{{producto.precio}}" [(ngModel)]="detalle.precio">
-                <input id="cabecera" name="cabecera" type="hidden" value="{{cabecera}}" [(ngModel)]="detalle.cabecera">
-              
-                <button (click)="AgregarAlCarrito(detalle)"
-                  id="buy-now"
-                  class="btn btn-lg buy-now-button " style="    background-color: #464855;
-                  color: white;"
-                >
-                  Añadir al carrito
-                </button>
-                
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <label>{{this.mensaje}}</label>
-              </div>
-            </div>
-          </div>
-          
-        </div>
+  <div class="small-container single-product">
+    <div class="row">
+      <div class="col-6">
+        <img height="500px" src="{{producto.imagen}}"
+        width="100%" id="ProductImg">
         
       </div>
-      <h2 class="banner-block-title">
-        Platillos delicios y sabrosos a tu disposicion
-              </h2>
-      <div class="slider-wrapper slider-wrapper-with-card-footer" style="width: 1664px;">
-          
-        <a *ngFor="let producto of productos" (click)="ObtenerInfo(producto)" class="slider-panel product-card slider-card-with-footer" href="#" alt="">
-    <div class="product-image">
-    
-    <picture class="image-wrapper">
-    <img style="height: 120px;" src="{{producto.imagen}}" alt="" class="image">
-    </picture>
-    </div>
-    <div class="product-info ">
-    <div class="name">{{producto.producto}}</div>
-    <div class="">
-    <div class="lowest-price">
-    <span class="price-promotional">S/ {{producto.precio}}.00</span>
-    <span class="sprite sprite-cmr_pe-sm hidden-lg-up d-lg-none"></span>
-    </div>
-    </div>
-    </div>
-    <div class="card-footer">
-    <button class="btn btn-sm card-footer-button">Ver producto</button>
-    </div>
-    </a>
+      <div class="col-6" style="margin-top: -90px;">
+        <p>Home / T-Shirts</p>
+        <h1>{{producto.producto}}</h1>
+        <h4>S/{{producto.precio}}.00</h4>
+        <select name="cantidad" [(ngModel)]="detalle.cantidad" class="form-control" style="padding: 0;">
+          <option [ngValue]="undefined" selected>--Seleccione--</option>
+          <option 
+          [ngValue]="1"
+          >
+        1
+      </option>
+                  <option
+          id="option-2"
+          [ngValue]="2">
+        2
+      </option>
+                  <option
+          id="option-3"
+          [ngValue]="3">
+        3
+      </option>
+                  <option
+          id="option-4"
+          [ngValue]="4">
+        4
+      </option>
+                  <option
+          id="option-5"
+          [ngValue]="5">
+        5
+      </option>
+                  <option
+          id="option-6"
+          [ngValue]="6">
+        6
+      </option>
+        </select>
+        <input id="producto" name="producto" type="hidden" value={{producto}} [(ngModel)]="detalle.producto">
+                <input id="precio" name="precio" type="hidden" value="{{producto.precio}}" [(ngModel)]="detalle.precio">
+                <input id="cabecera" name="cabecera" type="hidden" value="{{cabecera}}" [(ngModel)]="detalle.cabecera">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <label>{{this.mensaje}}</label>
+          </div>
+        </div>
+        <button (click)="AgregarAlCarrito(detalle)"  class="btn">Add to Car</button>
+        <h3>Detalles de Productos<i class="fa fa-indent"></i></h3>
+        <br>
+        <p>{{producto.descripcion}}</p>
       </div>
     </div>
-    
+
+  </div>
   </body>
 </html>

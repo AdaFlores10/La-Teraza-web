@@ -38,7 +38,7 @@
                         <td>S/{{cabecera.neto}}</td>
                         <td>{{cabecera.fechamat}}</td>
                         
-                        <td><button data-toggle="modal" data-target="#exampleModal2" (click)="VerDetalles(cabecera)" class="btn btn-success">Ver Detalles</button></td>
+                        <td><button  (click)="openCentrado(contenido,cabecera)" class="btn btn-success">Ver Detalles</button></td>
                     </tr>
                   </tbody>
               </table>
@@ -87,10 +87,42 @@
               </div>
             </div>
           </div>
-          
-          
-      
       </div>
+
+      <ng-template #contenido let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title">Listado Pedido</h4>
+            <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-bordered table-striped text-center">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let detalle of detalles">
+                    <td><img style="max-height: 70px; max-width: 70px;" src="{{detalle.producto.imagen}}"></td>
+                    <td>{{detalle.producto.producto}}</td>
+                    <td>{{detalle.cantidad}}</td>
+                    <td>S/{{detalle.precio}}.00</td>
+                    <td>S/{{detalle.cantidad*detalle.precio}}.00</td>
+                    
+                </tr>
+              </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success"(click)="modal.close()" >Cerrar</button>
+        </div>
+    </ng-template>
       <script src="../../assets/js/bootsnav.js"></script>
   </body>
   </html>

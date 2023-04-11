@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  :root {
+      scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Source Sans Pro;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  
+  #imgsitio{
+    width: 700px;
+    height: 467px;
+    transform: translate(-50%, 0%);
+  }
+  
+  #textobienvenido{
+    transform: translate(30%, 0%);
+    font-size: 1.5rem;
+    text-align: left;
+  }
+  
+  .container {
+    width: 100%;
+    padding-right: 1.5rem, 0.75rem;
+    padding-left: 1.5rem, 0.75rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .content-section {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+  
+  
+  

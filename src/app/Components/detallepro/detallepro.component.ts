@@ -60,6 +60,7 @@ export class DetalleproComponent implements OnInit {
     this.carrito.getCabeU(+iduser!).subscribe(data=>{
       this.cabecera=data;
       console.log(this.cabecera.tipoCabecera+this.cabecera.idCabecera)
+      console.log(this.cabecera.usuario)
     })
     this.Editar()
   }
@@ -105,6 +106,10 @@ export class DetalleproComponent implements OnInit {
                     this.detalle.estado=1;
                     this.carrito.createDetalle(detalle)
                       .subscribe(data=>{
+                        this.carrito.actualizarCant(data.idDetalleVenta,data).subscribe(detalleup=>{
+                          console.log("Creado con Exito")
+                          this.mensaje="Se agregó con éxito"
+                          })
                       // alert("Se Agrego Con exito");
                       this.mensaje="Se agregó con éxito"
                       })

@@ -70,8 +70,72 @@ export class NavbarComponent implements OnInit {
   }
 
   Registrar(user:Usuario){
-
-    this.loginService.createUser(user)
+    user.estado=1;
+    user.rol=this.roles[0];
+    var nombre:String = user.nombre;
+    var apellido:String = user.apellido;
+    var usuario:String = user.usuario;
+    var contra:String = user.contrasena;
+    var direccion:String = user.direccion;
+    var telefono:String = user.telefono;
+    var dni:String = user.dni;
+    console.log(nombre)
+    if(nombre==undefined || nombre.trim()==""){
+      swal.fire(
+        'Campo Nombre',
+        'Asegurece de rellenar todos los campos',
+        'info'
+      )
+    }else if(apellido==undefined || apellido.trim()=="") {
+      swal.fire(
+        'Campo Apellido',
+        'Asegurece de rellenar todos los campos correctamente',
+        'info'
+      )
+    }else if(usuario==undefined || usuario.trim()=="") {
+      swal.fire(
+        'Campo Usuario',
+        'Asegurece de rellenar todos los campos correctamente',
+        'info'
+      )
+    }
+    else if(contra==undefined || contra.trim()=="") {
+      swal.fire(
+        'Campo Contraseña',
+        'Asegurece de rellenar todos los campos correctamente',
+        'info'
+      )
+    }
+    else if(user.sexo==undefined ) {
+      swal.fire(
+        'Campo Sexo',
+        'Asegurece de rellenar todos los campos correctamente',
+        'info'
+      )
+    }
+    else if(direccion==undefined || direccion.trim()=="") {
+      swal.fire(
+        'Campo Direccion',
+        'Asegurece de rellenar todos los campos correctamente',
+        'info'
+      )
+    }
+    else if(telefono==undefined ) {
+      swal.fire(
+        'Campo Telefono',
+        'Asegurece de rellenar todos los campos correctamente',
+        'info'
+      )
+    }
+    else if(dni==undefined || dni.trim()==""  || dni.length!=8 ) {
+      swal.fire(
+        'Campo DNI',
+        'Asegurece de rellenar todos los campos correctamente',
+        'info'
+      )
+    }
+    else{
+      this.loginService.createUser(user)
     .subscribe(data=>{
       console.log(data.idUsuario)
       this.carrito.addCabCarrito(data.idUsuario).subscribe(d=>{
@@ -85,6 +149,7 @@ export class NavbarComponent implements OnInit {
       })
       this.router.navigate(["/login"])
     })
+    }
   }
 
   logoutUser(){

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en"  [ngClass]="{ prueba: clase }">
-  <head>
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body  >
     <!-- Header -->
     <header
       id="js-header"
@@ -272,6 +263,24 @@
                     BEBIDAS SIN ALCOHOL
                   </a>
                 </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a
+                    id="nav-link--home"
+                    class="nav-link text-uppercase g-color-white g-color-primary--hover g-px-5 g-py-20"
+                    href="/nosotros"
+                  >
+                    Nosotros
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a
+                    id="nav-link--home"
+                    class="nav-link text-uppercase g-color-white g-color-primary--hover g-px-5 g-py-20"
+                    href="/politicas"
+                  >
+                    Politicas
+                  </a>
+                </li>
               </ul>
               <!-- End Categories - Mega Menu -->
             </div>
@@ -370,20 +379,7 @@
           
         </div>
 
-          <div class="mb-1">
-              <label for="" class="form-label fw-bolder">Estado</label><br>
-              <select name="estado"  [(ngModel)]="usuario.estado" class="form-control ps-2" aria-label="Default select example">
-                  <option [ngValue]="undefined" selected>--Seleccione--</option>
-                  <option [ngValue]="1">Activo</option>
-              </select>
-          </div>
-          <div class="mb-1">
-            <label for="" class="form-label fw-bolder">Rol</label><br>
-            <select name="estado"  [(ngModel)]="usuario.rol" class="form-control ps-2" aria-label="Default select example">
-                <option [ngValue]="undefined" selected>--Seleccione--</option>
-                <option *ngFor="let rol of roles"  [ngValue]="rol">{{rol.rol}}</option>
-            </select>
-        </div>
+          
           
           
           
@@ -401,7 +397,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button (click)="Registrar(usuario)" type="button" data-dismiss="modal" class="btn btn-primary">Confirmar</button>
+        <button (click)="Registrar(usuario)" type="button" class="btn btn-primary">Confirmar</button>
       </div>
     </div>
   </div>
@@ -412,5 +408,4 @@
       alert("ASD");
       $("#js-header").addClass("position-fixed");
     </script>
-  </body>
-</html>
+

@@ -12,5 +12,6 @@ export class Usuario{
     public dni!: string ;
     public estado!:number  ;
     public rol!:Rol  ;
+    public correo!:string;
     
 }

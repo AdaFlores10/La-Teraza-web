@@ -1,0 +1,75 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <p><ngb-progressbar [value]="progreso" type="success" [showValue]="true" [striped]="true" [animated]="true"></ngb-progressbar></p>
+    <h1 class="h3 mb-4 mt-3">Datos Personales</h1>
+    <div class="row">
+      <!-- Left -->
+      <div class="col-lg-9">
+        <hr />
+        <section class="seccion-perfil-usuario">
+          <div class="perfil-usuario-header">
+              <div class="perfil-usuario-portada">
+                  <div class="perfil-usuario-avatar">
+                      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="img-avatar">
+                      <button type="button" class="boton-avatar">
+                          <i class="far fa-image"></i>
+                      </button>
+                  </div>
+                  <button type="button" class="boton-portada">
+                      <i class="far fa-image"></i> Cambiar fondo
+                  </button>
+              </div>
+          </div>
+          <div class="perfil-usuario-body">
+              <div class="perfil-usuario-bio">
+                  <h3 class="titulo"><span>{{user.nombre}} {{user.apellido}} </span></h3>
+                  <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                      tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="perfil-usuario-footer">
+                  <ul class="lista-datos">
+                      <li><i class="icono fas fa-map-signs"></i> Direccion de usuario: {{user.direccion}}</li>
+                      <li><i class="icono fas fa-phone-alt"></i> Telefono: {{user.telefono}} </li>
+                  </ul>
+                  <ul class="lista-datos">
+                      <li><i class="icono fas fa-building"></i> DNI: {{user.dni}} </li>
+                      <li><i class="icono fas fa-user-check"></i> Registro: {{user.sexo}} </li>
+                  </ul>
+              </div>
+          </div>
+      </section>
+      </div>
+      
+    <div class="col-lg-3">
+      <hr />
+      <div class="card position-sticky top-0">
+          <div class="p-3 bg-light bg-opacity-10">
+            <h6 class="card-title mb-3">Order Summary</h6>
+            <div class="d-flex justify-content-between mb-1 small">
+              <span>Subtotal</span> <span>S/{{monto}}</span>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between mb-4 small">
+              <span>TOTAL</span> <strong class="text-dark">S/{{monto}}</strong>
+            </div>
+            <div class="text-center d-flex justify-content-between mb-4 small">
+              <button (click)="irEnvio()" class="btn btn-warning ">Continuar</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+
+
+
+
+

@@ -1,0 +1,137 @@
+<div class="container">
+    <h1 class="h3 mb-4 mt-3">Datos Personales</h1>
+    <div class="row">
+      <!-- Left -->
+      <div class="col-lg-12">
+        <hr />
+        <section class="seccion-perfil-usuario">
+          <div class="perfil-usuario-header">
+              <div class="perfil-usuario-portada">
+                  <div class="perfil-usuario-avatar">
+                      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" alt="img-avatar">
+                      <button type="button" class="boton-avatar">
+                          <i class="far fa-image"></i>
+                      </button>
+                  </div>
+                  <button (click)="openCentrado(contenido)" type="button" class="boton-portada">
+                      <i class="far fa-image"></i> Editar Información
+                  </button>
+              </div>
+          </div>
+          <div class="perfil-usuario-body">
+              <div class="perfil-usuario-bio">
+                  <h3 class="titulo"><span>{{user.nombre}} {{user.apellido}} </span></h3>
+                  <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                      tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+              <div class="perfil-usuario-footer">
+                  <ul class="lista-datos">
+                      <li><i class="icono fas fa-map-signs"></i> Direccion de usuario: {{user.direccion}}</li>
+                      <li><i class="icono fas fa-phone-alt"></i> Telefono: {{user.telefono}} </li>
+                  </ul>
+                  <ul class="lista-datos">
+                      <li><i class="icono fas fa-building"></i> DNI: {{user.dni}} </li>
+                      <li><i class="icono fas fa-user-check"></i> Sexo: {{user.sexo}} </li>
+                  </ul>
+              </div>
+          </div>
+      </section>
+      </div>
+    </div>
+    </div>
+
+
+    <ng-template #contenido let-modal>
+      <div class="modal-header">
+          <h4 class="modal-title"><i class="icono fas fa-user-check"></i> Datos Personales</h4>
+          <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+        <style>
+          .bg{
+          background-image:url(../../../../assets/images/register.png);
+          background-position: center center;
+          background-size: cover;
+          
+      }
+      </style> 
+      
+      <!-- <div class="container w-75 bg-white rounded shadow" >
+           -->
+           <div class="row align-items-stretch" >
+              
+            <div class="col  rounded-end">
+                <h2 class="fw-bold text-center py-6">Registrar Usuario</h2>
+        <form action="#">
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-1 ">
+                  <label for="" class="form-label fw-bolder">Nombre</label><br>
+                  <input type="text" class="form-control" name="nombre" id="nombre" [(ngModel)]="user.nombre">
+                </div>
+              </div>
+              <div class="col-md-6 ml-auto">
+                <div class="mb-1">
+                  <label for="" class="form-label fw-bolder">Apellido</label><br>
+                  <input type="text" class="form-control" name="apellido" id="apellido" [(ngModel)]="user.apellido">
+              </div>
+              </div>
+              
+            </div>
+            <div class="mb-1">
+              <label for="" class="form-label fw-bolder">Usuario</label><br>
+              <input type="text" class="form-control" name="usuario" id="usuario" [(ngModel)]="user.usuario">
+            </div>
+            <div class="mb-1">
+              <label for="" class="form-label fw-bolder">Contraseña</label><br>
+              <input type="password" class="form-control" name="contrasena" id="contrasena" [(ngModel)]="user.contrasena">
+            </div>
+          
+          
+          
+        
+        <div class="mb-1">
+          <label for="" class="form-label fw-bolder">Genero</label><br>
+          <select name="sexo"  [(ngModel)]="user.sexo" class="form-control ps-2" aria-label="Default select example">
+              <option [ngValue]="undefined" selected>--Seleccione--</option>
+              <option [ngValue]="'Masculino'">Masculino</option>
+              <option [ngValue]="'Femenino'">Femenino</option>
+          </select>
+      </div>
+        <div class="mb-1">
+          <label for="" class="form-label fw-bolder">Direccion</label><br>
+          <input type="text" class="form-control" name="direccion" id="direccion" [(ngModel)]="user.direccion">
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-1">
+              <label for="" class="form-label fw-bolder">Telefono</label><br>
+              <input type="number" class="form-control" name="telefono" id="telefono" [(ngModel)]="user.telefono">
+            </div>
+          </div>
+          <div class="col-md-6 ml-auto">
+            <div class="mb-1">
+              <label for="" class="form-label fw-bolder">Dni</label><br>
+              <input type="text" class="form-control" name="dni" id="dni" [(ngModel)]="user.dni">
+            </div>
+          </div>
+          
+        </div>
+        <input type="hidden" [(ngModel)]="user.estado" name="estado" id="estado">
+      </form>
+    </div>
+
+    
+</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modal.close()">Cerrar</button>
+        <button (click)="UpdateUser(user)" type="button" class="btn btn-primary">Confirmar</button>
+      </div>
+      
+  </ng-template>

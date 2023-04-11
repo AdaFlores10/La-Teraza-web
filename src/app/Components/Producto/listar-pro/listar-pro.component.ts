@@ -25,9 +25,9 @@ export class ListarProComponent implements OnInit {
     );
   }
   Delete(producto:Producto){
-    this.productoService.deleteProducto(producto)
+    this.productoService.deleteProducto(producto.idProducto)
     .subscribe(data=>{
-      this.productos = this.productos.filter(c=>c.idProducto!==producto.idProducto);
+      
       alert("Producto Eliminada con Exito")
     })
   }

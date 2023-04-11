@@ -5,6 +5,7 @@ import { CabeceraVenta } from 'src/app/Models/CabeceraVenta';
 //import { DOCUMENT } from '@angular/platform-browser';
 import { DetalleVenta } from 'src/app/Models/DetalleVenta';
 import { CarritoComprasService } from 'src/app/Service/carrito-compras.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito-compras',
@@ -22,7 +23,7 @@ export class CarritoComprasComponent implements OnInit {
   clase=0
   detalleVentas:DetalleVenta[]
 
-  constructor(private detalleService:CarritoComprasService) {
+  constructor(private detalleService:CarritoComprasService, private router:Router) {
    }
 
   ngOnInit(): void {
@@ -79,8 +80,12 @@ export class CarritoComprasComponent implements OnInit {
     window.location.reload();
     // this.getCabeceras();
     // this.listarDetalles();
-    
-    
   }
+
+  irPasarela(){
+    localStorage.setItem("monto",String(this.cabecera.neto) );
+    window.location.href="pasarela";
+  }
+
 
 }

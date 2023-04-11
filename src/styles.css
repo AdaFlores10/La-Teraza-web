@@ -1,0 +1,23 @@
+a{
+    text-decoration: none !important;
+}
+
+.chat-bubble {
+    background-color: #DCF8C6;
+    border-radius: 20px;
+    padding: 10px;
+    max-width: 300px;
+    position: relative;
+  }
+  
+  .chat-bubble:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 20px solid #DCF8C6;
+    border-bottom: 10px solid transparent;
+  }

@@ -1,0 +1,73 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <p><ngb-progressbar [value]="50" type="success" [showValue]="true" [striped]="true" [animated]="true"></ngb-progressbar></p>
+    <h1 class="h3 mb-4 mt-3">Envio y Direccion</h1>
+    <div class="row">
+      <!-- Left -->
+      <div *ngIf="valor"  class="col-lg-9">
+        <hr />
+        <div style="background-color: #464855; height: 500px; display: flex;
+        align-items: center;
+        justify-content: center;">
+        <div style="width: 300px; " class="text-center">
+            <h3 class="text-white text-center" style="width: 300px;">¿Donde Quieres Recoger tu pedido?</h3>
+            <button (click)="irPagar()" class="btn btn-warning">Recojo en Tienda</button> 
+            <button (click)="cambiarValor()" class="btn btn-warning ms-3">Envio A Domicilio</button> 
+        </div>
+        
+        
+        </div>
+      </div>
+      <div *ngIf="!valor"  class="col-lg-9">
+        <hr />
+        <div style="background-color: #464855; height: 500px; display: flex;
+        align-items: center;
+        justify-content: center;">
+        <div style="width: 300px; " class="text-center">
+            <h2 class="text-warning text-center" style="width: 300px;">Informacion de Envio</h2>
+            <h4 class="text-white text-center" style="width: 300px;">Direccion</h4>
+            <input class="form-control" type="text">
+            <h4 class="text-white text-center" style="width: 300px;">Numero Domicilio</h4>
+            <input class="form-control" type="text">
+            <h4 class="text-white text-center" style="width: 300px;">¿Donde Estas?</h4>
+            <div>
+            <input name="lugar" value="trabajo"  type="radio"><i class="fa-sharp fa-solid fa-briefcase"></i>Trabajo
+            <input name="lugar" value="casa"  type="radio"><i class="fa-solid fa-house"></i>Casa
+            
+        </div>
+            
+            
+        </div>
+        
+        
+        </div>
+      </div>
+      
+    <div class="col-lg-3">
+        
+      <hr />
+      <div class="card position-sticky top-0">
+          <div class="p-3 bg-light bg-opacity-10">
+            <h6 class="card-title mb-3">Order Summary</h6>
+            <div class="d-flex justify-content-between mb-1 small">
+                <span>Subtotal</span> <span>S/{{monto}}</span>
+              </div>
+              <hr>
+              <div class="d-flex justify-content-between mb-4 small">
+                <span>TOTAL</span> <strong class="text-dark">S/{{monto}}</strong>
+              </div>
+            <div class="text-center d-flex justify-content-between mb-4 small">
+              <button (click)=" irPagar()" class="btn btn-warning ">Continuar</button> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>

@@ -97,6 +97,12 @@
               Mis pedidos
             </a>
           </li>
+          <li *ngIf="admin && (rol==3)">
+            <a href="#"  [routerLink]="['/cliente/cliente-perfil']" routerLinkActive="active" class="nav-link text-white">
+              <i class="fa-solid fa-user"></i>
+              Perfil
+            </a>
+          </li>
           <li *ngIf="admin && (rol==1 || rol==2)">
             <a href="#"[routerLink]="['/cliente/cliente-producto']" routerLinkActive="active" class="nav-link text-white">
               <i class="fa-sharp fa-solid fa-box"></i>
@@ -131,6 +137,18 @@
             <a href="#"[routerLink]="['/cliente/cliente-pedidosadmin']" routerLinkActive="active" class="nav-link text-white">
               <i class="fa-solid fa-box-open"></i>
               Pedidos
+            </a>
+          </li>
+          <li *ngIf="admin && (rol==1)">
+            <a href="#"[routerLink]="['/cliente/cliente-dashproducto']" routerLinkActive="active" class="nav-link text-white">
+              <i class="fa-solid fa-chart-line" style="color: #ff6600;"></i>
+              DashBoard Producto
+            </a>
+          </li>
+          <li *ngIf="admin && (rol==1)">
+            <a href="#"[routerLink]="['/cliente/cliente-dashventas']" routerLinkActive="active" class="nav-link text-white">
+              <i class="fa-solid fa-chart-line" style="color: #ff6600;"></i>
+              DashBoard Ventas
             </a>
           </li>
         </ul>

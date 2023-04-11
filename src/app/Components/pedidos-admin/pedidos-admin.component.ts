@@ -3,6 +3,7 @@ import { CabeceraVenta } from 'src/app/Models/CabeceraVenta';
 import { DetalleVenta } from 'src/app/Models/DetalleVenta';
 import { Usuario } from 'src/app/Models/Usuario';
 import { CarritoComprasService } from 'src/app/Service/carrito-compras.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-pedidos-admin',
@@ -14,7 +15,7 @@ export class PedidosAdminComponent implements OnInit {
   public user:Usuario = new Usuario();
   cabeceras:CabeceraVenta[]=[];
   detalles:DetalleVenta[]=[];
-  constructor( private carritoService:CarritoComprasService) { }
+  constructor( private modal:NgbModal, private carritoService:CarritoComprasService) { }
 
   ngOnInit(): void {
     this.carritoService.listarCabTodos().subscribe(
@@ -35,4 +36,14 @@ export class PedidosAdminComponent implements OnInit {
     );
   }
 
-}
+  openCentrado(contenido,CabeceraVenta:CabeceraVenta,user:Usuario){
+    this.modal.open(contenido,{centered:true});
+    this.user=user;
+    this.carritoService.listarDetUser(CabeceraVenta.idCabecera).subscribe(
+      detalles=>{
+        this.detalles=detalles;
+        console.log(detalles);
+      }
+    );
+
+  }}

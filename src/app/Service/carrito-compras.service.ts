@@ -11,10 +11,16 @@ export class CarritoComprasService {
 
   private url:string="http://localhost:8080/detalle/detalleCarrito/";
 
+  private url2:string="http://localhost:8080/detalle";
+
   constructor(private http:HttpClient) { }
 
   listarDetalles(idUser:number):Observable<DetalleVenta[]>{
     return this.http.get<DetalleVenta[]>(this.url+idUser);
+  }
+
+  listarDet():Observable<DetalleVenta[]>{
+    return this.http.get<DetalleVenta[]>(this.url2+ "/detalles");
   }
 
   createDetalle(detalle:DetalleVenta){
